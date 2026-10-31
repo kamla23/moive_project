@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MoviePage</title>
+
+    <link rel="stylesheet" href="moive.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="whole">
+      <aside class="sidebar">
+        <h2>
+          <i class="fa-solid fa-clapperboard"></i> Cine<span>Stream</span>
+        </h2>
+
+        <nav>
+          <ul>
+            <li class="active"><i class="fa-solid fa-house"></i> Home</li>
+            <li><i class="fa-solid fa-fire"></i> Trending</li>
+            <li><i class="fa-solid fa-folder-open"></i> Library</li>
+            <li><i class="fa-solid fa-star"></i> Favorites <span id="favCount">(0)</span></li>
+            <li><i class="fa-solid fa-clock"></i> Recent</li>
+          </ul>
+        </nav>
+
+        <div class="myname">
+          <div class="shortname">KF</div>
+          <div>
+            <p>Kamla Fuleshri</p>
+            <small>Premium Plan</small>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+
+      
+        <header class="topbar">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="searchInput" type="text" placeholder="Search movies..." />
+          </div>
+
+          <div class="icons">
+            <span id="themeToggle"><i class="fa-solid fa-moon"></i></span>
+            <span><i class="fa-solid fa-bell"></i></span>
+            <span><i class="fa-solid fa-gear"></i></span>
+          </div>
+        </header>
+
+  
+        <section class="hero">
+          <div class="hero-text">
+            <span class="tag">STREAMING NOW</span>
+            <h1>Beyond the Horizon</h1>
+            <p>A journey into space where survival is only the beginning.</p>
+
+            <div class="hero-buttons">
+              <button class="watch">Watch Now</button>
+              <button class="watchlist">+ Watchlist</button>
+            </div>
+          </div>
+        </section>
+
+<section class="trending">
+
+          <div class="section-title">
+            <h2>Trending Movies</h2>
+            <a href="#">View All</a>
+          </div>
+
+          <div class="slider-container" style="position: relative;">
+            
+            <button class="left">❮</button>
+            
+            <button class="right">❯</button>
+
+            <div id="movieSlider" class="movie-grid">
+              </div>
+
+          </div>
+
+        </section>
+
+      </main>
+    </div>
+
+    <div id="loader" class="loader">Loading...</div>
+
+
+    <div id="movieModal" class="modal">
+      <span class="close">&times;</span>
+
+      <div class="modal-content">
+        <img id="modalImg" />
+        <h2 id="modalTitle"></h2>
+      </div>
+    </div>
+
+    <!-- ================= SCRIPT ================= -->
+    <script src="moive.js"></script>
+  </body>
+</html>

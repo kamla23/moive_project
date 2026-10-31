@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Favorites</title>
+  <link rel="stylesheet" href="moive1.css">
+</head>
+<body>
+
+<h1>My Favorite Movies ❤️</h1>
+
+<div id="favoritesContainer" class="movie-slider"></div>
+
+<script>
+const container = document.getElementById("favoritesContainer");
+
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+favorites.forEach(movie => {
+
+  const card = document.createElement("div");
+  card.classList.add("movie-card");
+
+  card.innerHTML = `
+    <div class="movie-image">
+      <img src="${movie.img}">
+    </div>
+    <h3>${movie.title}</h3>
+    <button class="remove-btn">Remove ❌</button>
+  `;
+
+  const removeBtn = card.querySelector(".remove-btn");
+
+  removeBtn.addEventListener("click", () => {
+
+    card.style.opacity = "0";
+    card.style.transform = "scale(0.8)";
+
+    setTimeout(() => {
+      favorites = favorites.filter(fav => fav.title !== movie.title);
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+      card.remove();
+    }, 300);
+  });
+
+  container.appendChild(card);
+});
+</script>
+
+</body>
+</html>
